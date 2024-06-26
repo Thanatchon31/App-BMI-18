@@ -10,21 +10,21 @@
  <img src="../../assets/img/bmi.png" width="130" >
  <ion-card color="success" class="ion-padding">
   <ion-item>
-<ion-input label="กรอกน้ำหนัก" placeholder="kg"></ion-input>
+<ion-input label="กรอกน้ำหนัก" placeholder="kg"[(ngModel)]="weight"></ion-input>
   </ion-item>
   <br>
   <ion-item>
-    <ion-input label="กรอกส่วนสูง" placeholder="cm"></ion-input>
+    <ion-input label="กรอกส่วนสูง" placeholder="cm"[(ngModel)]="hight"></ion-input>
   </ion-item>
   <br>
-  <ion-button size="large" expand="block" color="secondary">คำนวณ</ion-button>
+  <ion-button size="large" expand="block" color="secondary"(click)="oncal()">คำนวณ</ion-button>
  </ion-card>
 
 
 <ion-card color="medium">
   <ion-card-header>
     <ion-card-subtitle>ผลลัพธ์</ion-card-subtitle>
-    <ion-card-subtitle>18.5</ion-card-subtitle>
+    <ion-card-subtitle>{{ result | number : '1.0-2' }}</ion-card-subtitle>
  </ion-card-header>
 </ion-card>
 
@@ -32,7 +32,7 @@
 <ion-card color="success">
   <ion-card-header>
     <ion-card-subtitle>แปลผล</ion-card-subtitle>
-    <ion-card-subtitle>อยู่ในเกณฑ์ปกติ</ion-card-subtitle>
+    <ion-card-subtitle>{{result_text }}</ion-card-subtitle>
  </ion-card-header>
 </ion-card>
 
